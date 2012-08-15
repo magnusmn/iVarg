@@ -6,7 +6,7 @@ gem 'rails', '3.2.7'
 gem 'execjs', '1.4.0'
 gem 'therubyracer', '0.10.1'
 gem 'jquery-rails', '2.0.0'
-
+gem 'bootstrap-sass', '2.0.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
