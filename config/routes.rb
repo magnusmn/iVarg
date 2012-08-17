@@ -1,7 +1,12 @@
 IVarg::Application.routes.draw do
-  get "static_pages/home"
 
-  get "static_pages/help"
+  root :to => 'static_pages#home'
+
+  match '/help' => 'static_pages#help'
+
+#  get "static_pages/home"
+
+#  get "static_pages/help"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
