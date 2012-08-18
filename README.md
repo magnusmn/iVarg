@@ -1,1 +1,1 @@
-Ruby on rails test application.
+iVarg - A ruby on rails test application.

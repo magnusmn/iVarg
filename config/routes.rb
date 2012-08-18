@@ -1,8 +1,11 @@
 IVarg::Application.routes.draw do
 
+
   root :to => 'static_pages#home'
 
   match '/help' => 'static_pages#help'
+
+  match '/signup' => 'users#new'
 
 
   # The priority is based upon order of creation:
