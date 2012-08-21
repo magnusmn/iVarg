@@ -1,11 +1,14 @@
 require 'spec_helper'
 
 describe "UserPages" do
-  describe "GET signup page" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get signup_path 
-      response.status.should be(200)
+  describe "Signup page" do
+    before { visit  signup_path }
+
+    it "should have the h1 'Home'" do
+      page.should have_selector('h1', :text => "Sign up here")
+    end
+    it "should have the right title" do
+      page.should have_selector('title', :text => "iVarg | Sign up")
     end
   end
 end
