@@ -1,5 +1,18 @@
 <% provide(:title, 'All users') %>
+
+
+<table border=1 width=100%>
+  <tr>
+    <th>ID</td>
+    <th>Name</td>
+    <th>Email</td>
+  </tr>
+
 <% @user.each do |u| %>
-  <p>Name:  <%= u.name %></p> </ br>
-  <p>Email: <%=u.email %></p> </ br>
+  <tr>
+    <td><%= u.id %></td>
+    <td><%= u.name %></td>
+    <td><%=u.email %></td>
+  </tr>
 <% end %>
+</table>
