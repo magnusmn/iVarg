@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120827064552) do
 
-  create_table "adds", :force => true do |t|
-    t.integer  "users_id"
-    t.integer  "price"
-    t.integer  "bid"
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "adverts", :force => true do |t|
     t.string   "title"
     t.text     "body"
