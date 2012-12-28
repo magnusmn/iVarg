@@ -26,6 +26,7 @@ describe Advert do
   it { should respond_to(:body) }
   it { should respond_to(:price) }
   it { should respond_to(:bid) }
+  it { should respond_to(:user_id) }
 
   describe "it should have a title" do
     before { @advert.title = "" }
