@@ -1,8 +1,12 @@
 IVarg::Application.routes.draw do
 
-  resources :users
+  get "adverts/new"
 
-  root :to => 'static_pages#home'
+  resources :users
+  resources :adverts
+
+  #root :to => 'static_pages#home'
+  root :to => 'adverts#index'
 
   match '/help' => 'static_pages#help'
 

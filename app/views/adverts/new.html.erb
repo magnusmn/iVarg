@@ -1,0 +1,21 @@
+<% provide(:title, 'New Advert') %>
+<h1>New advert</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@advert) do |f| %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :body %>
+      <%= f.text_area :body, size: "60x12" %>
+
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+
+      <%= f.submit "Create advert", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+

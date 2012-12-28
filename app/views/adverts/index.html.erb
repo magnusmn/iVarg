@@ -1,0 +1,29 @@
+<% provide(:title, 'All adverts') %>
+
+<div class="row">
+  <div class="span2 offset5">
+    <%= link_to image_tag('logo.gif'), root_path %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset1">
+    <table width=100% class="table table-striped">
+      <tr>
+        <th>ID</td>
+        <th>Title</td>
+        <th>Price</td>
+        <th>Date</td>
+      </tr>
+ 
+      <% @advert.each do |a| %>
+      <tr>
+        <td><%=link_to a.id, advert_path(a)%></td>
+        <td><%=a.title%></td>
+        <td><%=a.price%></td>
+        <td><%=a.updated_at.strftime("%Y-%m-%d %H:%M")%></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
