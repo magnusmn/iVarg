@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: adverts
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  body       :text
+#  bid        :integer
+#  price      :integer
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Advert do
