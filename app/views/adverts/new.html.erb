@@ -9,10 +9,10 @@
       <%= f.text_field :title %>
 
       <%= f.label :body %>
-      <%= f.text_area :body, size: "60x12" %>
+      <%= f.text_area :body, :size => "60x6" %>
 
       <%= f.label :price %>
-      <%= f.text_field :price %>
+      <%= f.text_field :price, :size => "20"  %>
 
       <%= f.submit "Create advert", class: "btn btn-large btn-primary" %>
     <% end %>
