@@ -10,16 +10,16 @@
   <div class="span10 offset1">
     <table width=100% class="table table-striped">
       <tr>
-        <th>ID</td>
         <th>Title</td>
+        <th>Author</td>
         <th>Price</td>
         <th>Date</td>
       </tr>
  
       <% @advert.each do |a| %>
       <tr>
-        <td><%=link_to a.id, advert_path(a)%></td>
-        <td><%=a.title%></td>
+        <td><%=link_to a.title, advert_path(a) %></td>
+        <td><%=a.user.name%></td>
         <td><%=a.price%></td>
         <td><%=a.updated_at.strftime("%Y-%m-%d %H:%M")%></td>
       </tr>

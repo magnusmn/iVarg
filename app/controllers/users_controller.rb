@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       sign_in @user
       redirect_to @user
     else
-      flash.now[:error] = "Major fuck up !"
+      #flash.now[:error] = "Major fuck up !"
       render 'new'
     end
     

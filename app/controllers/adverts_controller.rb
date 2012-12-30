@@ -13,12 +13,12 @@ class AdvertsController < ApplicationController
   end
 
   def create
-    @advert = Advert.new(params[:advert])
+    @advert = current_user.adverts.build(params[:advert])
     if @advert.save
       flash[:success] = "Advert sucessfully created!"
       redirect_to @advert
     else
-      flash.now[:error] = "Major fuck up !"
+      #flash.now[:error] = "Major fuck up !"
       render 'new'
     end
     
