@@ -3,5 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+    logger.info "Help!!"
   end
 end

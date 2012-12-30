@@ -40,4 +40,24 @@ describe Advert do
     it { should_not be_valid }
   end
 
+  describe "when a price is invalid" do
+    it "should be rejected" do
+      prices = [ -1, -100, -5 -100 ]
+      prices.each do |invalid_price|
+        @advert.price = invalid_price
+        @advert.should_not be_valid
+      end 
+    end 
+  end
+
+  describe "when a price is valid" do
+    it "should be acepted" do
+      prices = [ 0, 100, 5, 1066 ]
+      prices.each do |valid_price|
+        @advert.price = valid_price
+        @advert.should be_valid
+      end 
+    end 
+  end
+
 end

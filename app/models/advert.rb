@@ -19,6 +19,7 @@ class Advert < ActiveRecord::Base
 
   validates :title,  :presence => true
   validates :body,   :presence => true
-
-
+  validates_numericality_of :price, :only_integer => true,
+                                    :greater_than_or_equal_to => 0,
+                                    :message => "Can only be whole number."
 end

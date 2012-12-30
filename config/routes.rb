@@ -4,6 +4,7 @@ IVarg::Application.routes.draw do
 
   resources :users
   resources :adverts
+  resources :sessions, only: [:new, :create, :destroy]
 
   #root :to => 'static_pages#home'
   root :to => 'adverts#index'
@@ -11,6 +12,8 @@ IVarg::Application.routes.draw do
   match '/help' => 'static_pages#help'
 
   match '/signup' => 'users#new'
+  match '/signin' => 'sessions#new'
+  match '/signout' => 'sessions#destroy', via: :delete
 
 
   # The priority is based upon order of creation:
