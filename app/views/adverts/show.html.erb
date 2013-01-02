@@ -1,5 +1,20 @@
 <% provide(:title, @advert.title) %>
 
-<h1><%= @advert.title %></h1>
-<h1><%= @advert.body %></h1>
+<div class="row">
+<div class="span4 offset4">
+  <%= image_tag("http://placehold.it/350x300", :border => 1) %>
+</div>
+</div>
+
+<div class="row">
+  <div class="offset3 span6 advert">
+    <h4><%= @advert.title %></h4>
+  </div>
+</div>
+<div class="row">
+  <div class="offset3 span6 advert">
+    <p><%= @advert.body %></p>
+  </div>
+</div>
+
 
