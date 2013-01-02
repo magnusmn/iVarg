@@ -1,5 +1,6 @@
 
 <% if object.any? %>
+<%= will_paginate object %>
 <table width=100% class="table table-striped">
   <thead>
     <tr>
@@ -21,6 +22,7 @@
 <% end %>
   </tbody>
 </table>
+<%= will_paginate object %>
 <% else %>
 <div class="alert alert-info">
   <p>Database table is empty, no entries found.</p>

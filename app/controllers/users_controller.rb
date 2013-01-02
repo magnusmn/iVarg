@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
 
-  def index 
+  def index
     @user = User.all
   end
 
-  def show 
+  def show
     @user = User.find(params[:id])
+    @adverts = Advert.where(:user_id => params[:id]).paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -22,7 +23,6 @@ class UsersController < ApplicationController
       #flash.now[:error] = "Major fuck up !"
       render 'new'
     end
-    
   end
 
 end

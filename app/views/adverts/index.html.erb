@@ -1,17 +1,16 @@
 <% provide(:title, 'All adverts') %>
 
 <div class="row">
-  <div class="span2 offset5">
-    <%= link_to image_tag('logo.gif'), root_path %>
-  </div>
+  <%= link_to image_tag('logo.gif'), root_path %>
 </div>
 
-<div class="row alert alert-info span10 offset1">
+<div class="row alert alert-info">
   <h4>There are currently <%=Advert.count%> adverts in the database.</h4>
 </div>
 
 <div class="row">
   <div class="span9 offset2">
-<%= render 'shared/advert_list', object: @advert %>
+    <%= render 'shared/advert_list', object: @adverts %>
   </div>
 </div>
+
