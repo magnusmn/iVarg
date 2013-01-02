@@ -8,22 +8,6 @@
 
 <div class="row">
   <div class="span10 offset1">
-    <table width=100% class="table table-striped">
-      <tr>
-        <th>Title</td>
-        <th>Author</td>
-        <th>Price</td>
-        <th>Date</td>
-      </tr>
- 
-      <% @advert.each do |a| %>
-      <tr>
-        <td><%=link_to a.title, advert_path(a) %></td>
-        <td><%=a.user.name%></td>
-        <td><%=a.price%></td>
-        <td><%=a.updated_at.strftime("%Y-%m-%d %H:%M")%></td>
-      </tr>
-      <% end %>
-    </table>
+<%= render 'shared/advert_list', object: @advert %>
   </div>
 </div>

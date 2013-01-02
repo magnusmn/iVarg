@@ -4,22 +4,5 @@
 <h1><%= @user.email %></h1>
 
 <p>There are <%= @user.adverts.count %> adverts registered.</p>
-<table width=100% class="table table-striped">
-  <thead>
-    <tr>
-      <th>Title</td>
-      <th>Price</td>
-      <th>Date</td>
-    </tr>
-  </thead>
 
-  <tbody>
-<% @user.adverts.each do |a| %>
-    <tr>
-      <td><%=link_to a.title, advert_path(a) %></td>
-      <td><%=a.price%></td>
-      <td><%=a.updated_at.strftime("%Y-%m-%d %H:%M")%></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<%= render 'shared/advert_list', object: @user.adverts %>

@@ -1,0 +1,19 @@
+<table width=100% class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</td>
+      <th>Price</td>
+      <th>Date</td>
+    </tr>
+  </thead>
+
+  <tbody>
+<% object.each do |a| %>
+    <tr>
+      <td><%=link_to a.title, advert_path(a) %></td>
+      <td><%=a.price%></td>
+      <td><%=a.updated_at.strftime("%Y-%m-%d %H:%M")%></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
