@@ -6,8 +6,12 @@
   </div>
 </div>
 
+<div class="row alert alert-info span10 offset1">
+  <h4>There are currently <%=Advert.count%> adverts in the database.</h4>
+</div>
+
 <div class="row">
-  <div class="span10 offset1">
+  <div class="span9 offset2">
 <%= render 'shared/advert_list', object: @advert %>
   </div>
 </div>

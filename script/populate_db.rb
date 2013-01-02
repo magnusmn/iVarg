@@ -1,9 +1,31 @@
-require "./config/environment.rb"
+#!/usr/bin/env ruby
 
-u=User.new(name: "Test",
-           email: "tester.apa.com",
-           password: "foobar",
-           password_confirmation: "foobar")
-u.save
+require "../config/environment.rb"
 
-puts u
+
+def reset_db
+  puts "Deleting database entries"
+  User.delete_all
+  Advert.delete_all
+end
+
+def do_populate
+  for user in 1..10
+    u=User.create(name: "Author-#{user}",
+                  email: "tester-#{user}@testing.com",
+                  password: "foobar",
+                  password_confirmation: "foobar")
+
+    puts "Creating #{u.name} (#{u.email})"
+
+    for add in 1..5
+      a=u.adverts.create(title: "Thing-#{add}",
+                         body: "Amazing body #{add}",
+                         price: add*67)
+      puts "  #{a.title}"
+    end
+  end
+end
+
+reset_db
+do_populate
