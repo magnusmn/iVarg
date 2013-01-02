@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
+  before_filter :correct_user, only: [ :destroy, :show ]
+  before_filter :admin_user, only: [ :index ]
 
   def index
     @user = User.all
   end
 
   def show
-    @user = User.find(params[:id])
-    @adverts = Advert.where(:user_id => params[:id]).paginate(page: params[:page], per_page: 10)
+    @user ||= User.find(params[:id])
+    @adverts = @user.adverts.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -25,4 +27,16 @@ class UsersController < ApplicationController
     end
   end
 
+  private
+
+    # Use find_by_id here to not raise an exception
+    def correct_user
+      @user = User.find_by_id(params[:id])
+      redirect_to(root_url) unless @user && current_user?(@user)
+    end
+
+    def admin_user 
+      # Add admin users later 
+      redirect_to(root_url) unless true 
+    end
 end

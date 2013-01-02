@@ -2,21 +2,25 @@
 <h1>Sign up here</h1>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span4 offset4">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name,
+                       :placeholder => "Enter name here..."  %>
 
       <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email,
+                       :placeholder => "Enter email here..." %>
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password,
+                           :placeholder => "Enter password here..." %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation,
+                           :placeholder => "Enter password confirmation here..." %>
 
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>

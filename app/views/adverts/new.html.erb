@@ -1,19 +1,18 @@
 <% provide(:title, 'New Advert') %>
-<h1>New advert</h1>
 
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span4 offset4">
     <%= form_for(@advert) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, placeholder: "Enter advert title here..." %>
 
       <%= f.label :body %>
-      <%= f.text_area :body, :size => "60x6" %>
+      <%= f.text_area :body, :size => "60x6", placeholder: "Enter advert body here..." %>
 
       <%= f.label :price %>
-      <%= f.text_field :price, :size => "20"  %>
+      <%= f.text_field :price, :size => "20", placeholder: "Enter advert price here..." %>
 
       <%= f.submit "Create advert", class: "btn btn-large btn-primary" %>
     <% end %>

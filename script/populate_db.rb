@@ -9,6 +9,14 @@ def reset_db
   Advert.delete_all
 end
 
+def add_default_user 
+  u=User.create(name: "Magnus",
+                email: "mannen@home.se",
+                password: "foobar",
+                password_confirmation: "foobar")
+
+end
+
 def do_populate
   for user in 1..10
     u=User.create(name: "Author-#{user}",
@@ -28,4 +36,5 @@ def do_populate
 end
 
 reset_db
+add_default_user
 do_populate

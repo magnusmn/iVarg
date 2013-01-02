@@ -11,6 +11,12 @@
     <%= render 'layouts/header' %>
 
     <div class="container">
+      <div class="row">
+        <div class="offset4 span4">
+          <%= link_to image_tag('logo.gif'), root_path %>
+        </div>
+      </div>
+
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
