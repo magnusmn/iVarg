@@ -2,17 +2,21 @@
 
 
 <table width=100% class="table table-striped">
-  <tr>
-    <th>ID</td>
-    <th>Name</td>
-    <th>Email</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>ID</td>
+      <th>Name</td>
+      <th>Email</td>
+    </tr>
+  </thead>
 
+  <tbody>
 <% @user.each do |u| %>
-  <tr>
-    <td><%=link_to u.id, user_path(u)%></td>
-    <td><%= u.name %></td>
-    <td><%=u.email %></td>
-  </tr>
+    <tr>
+      <td><%=link_to u.id, user_path(u)%></td>
+      <td><%= u.name %></td>
+      <td><%=u.email %></td>
+    </tr>
 <% end %>
+  </tbody>
 </table>

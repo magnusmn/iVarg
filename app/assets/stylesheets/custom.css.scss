@@ -175,6 +175,13 @@ aside {
   }
 }
 
+//.table tbody tr:hover td, .table tbody tr:hover th { 
+.table tbody tr:hover td { 
+  background-color: $grayLighter;
+}
+
+
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
