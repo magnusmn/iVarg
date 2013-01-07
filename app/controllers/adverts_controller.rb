@@ -1,5 +1,4 @@
 class AdvertsController < ApplicationController
-  helper_method :sort_column, :sort_direction
 
   before_filter :signed_in_user, only: :new
   before_filter :correct_user, only: [ :show, :destroy ]
@@ -42,10 +41,4 @@ class AdvertsController < ApplicationController
 #      redirect_to(root_url) unless user && current_user?(user)
     end
 
-    def sort_column
-      Advert.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"
-    end
-    def sort_direction
-      %w[asc desc].include?(params[:dir]) ? params[:dir] : "desc"
-    end
 end
