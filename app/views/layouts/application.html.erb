@@ -11,12 +11,21 @@
     <%= render 'layouts/header' %>
 
     <div class="container">
+<!--
       <div class="row">
-        <div class="offset4 span4">
+        <div class="span4">
           <%= link_to image_tag('logo.gif'), root_path %>
         </div>
+        <div class="offset4 span3 well">
+          <ul>
+            <li>dfasldfjlasdf</p>
+            <li>dfasldfjlasdf</p>
+            <li>dfasldfjlasdf</p>
+            <li>dfasldfjlasdf</p>
+          </ul>
+        </div>
       </div>
-
+-->
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
@@ -24,6 +33,6 @@
       <%= yield %>
 
       <%= debug(params) if Rails.env.development? %>
-    </div>
+    </div> <!-- /container -->
   </body>
 </html>

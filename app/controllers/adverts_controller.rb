@@ -3,7 +3,9 @@ class AdvertsController < ApplicationController
   before_filter :correct_user, only: [ :show, :destroy ]
 
   def index
-    @adverts = Advert.paginate(page: params[:page], per_page: 10)
+    @adverts = Advert.paginate(page: params[:page],
+                               per_page: 10,
+                               order: 'updated_at DESC')
   end
 
   def show
