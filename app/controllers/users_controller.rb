@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   before_filter :admin_user,   only: [ :index ]
   before_filter :correct_user, only: [ :destroy, :show ]
 
@@ -38,5 +40,12 @@ class UsersController < ApplicationController
 
     def admin_user 
       redirect_to(root_url) unless current_user && current_user.admin? 
+    end
+
+    def sort_column
+      Advert.column_names.include?(params[:sort]) ? params[:sort] : "updated_at"
+    end
+    def sort_direction
+      %w[asc desc].include?(params[:dir]) ? params[:dir] : "desc"
     end
 end
