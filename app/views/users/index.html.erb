@@ -7,6 +7,8 @@
       <th>ID</td>
       <th>Name</td>
       <th>Email</td>
+      <th>Count</td>
+      <th>Action</td>
     </tr>
   </thead>
 
@@ -16,6 +18,11 @@
       <td><%=link_to u.id, user_path(u)%></td>
       <td><%= u.name %></td>
       <td><%=u.email %></td>
+      <td><%=u.adverts.count %></td>
+      <td><%= link_to 'Edit', edit_user_path(u), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', user_path(u), :method => :delete,
+                                               :confirm => "Really delete #{u.name} and all corresponding adverts?",
+                                               :class => 'btn btn-mini btn-danger' %></td>
     </tr>
 <% end %>
   </tbody>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :admin_user,   only: [ :index ]
+  before_filter :_admin_user,   only: [ :index ]
   before_filter :correct_user, only: [ :destroy, :show ]
 
   def index
@@ -29,6 +29,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit 
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Profile updated"
+      sign_in @user
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    u=User.find(params[:id]).destroy
+    flash[:success] = "#{u.name} is sucessfully deleted."
+    redirect_to users_url
+  end
+
   private
 
     # Use find_by_id here to not raise an exception
@@ -38,7 +59,7 @@ class UsersController < ApplicationController
                                             current_user.admin?
     end
 
-    def admin_user 
-      redirect_to(root_url) unless current_user && current_user.admin? 
+    def _admin_user 
+      redirect_to(root_url) unless admin_user?
     end
 end
